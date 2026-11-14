@@ -1,4 +1,3 @@
-// Add your preferred business email address between the quotation marks.
 const BUSINESS_EMAIL = "your-email@example.com";
 
 const menuButton = document.querySelector(".menu-toggle");
@@ -25,10 +24,12 @@ document.querySelector("#contact-form").addEventListener("submit", event => {
   const email = form.get("email");
   const message = form.get("message");
 
+  const status = document.querySelector("#form-status");
   if (BUSINESS_EMAIL === "your-email@example.com") {
-    alert("Before using the contact form, add your business email address in script.js.");
+    status.textContent = "The contact form is not live yet. Please check back soon.";
     return;
   }
+  status.textContent = "Opening your email app...";
 
   const subject = encodeURIComponent(`Website inquiry from ${name}`);
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProject details:\n${message}`);
