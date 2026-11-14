@@ -1,0 +1,36 @@
+// Add your preferred business email address between the quotation marks.
+const BUSINESS_EMAIL = "your-email@example.com";
+
+const menuButton = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+
+menuButton.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.querySelector("span").textContent = isOpen ? "−" : "＋";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.querySelector("span").textContent = "＋";
+  });
+});
+
+document.querySelector("#contact-form").addEventListener("submit", event => {
+  event.preventDefault();
+  const form = new FormData(event.currentTarget);
+  const name = form.get("name");
+  const email = form.get("email");
+  const message = form.get("message");
+
+  if (BUSINESS_EMAIL === "your-email@example.com") {
+    alert("Before using the contact form, add your business email address in script.js.");
+    return;
+  }
+
+  const subject = encodeURIComponent(`Website inquiry from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProject details:\n${message}`);
+  window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
+});
