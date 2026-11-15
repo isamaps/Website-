@@ -1,4 +1,4 @@
-const BUSINESS_EMAIL = "your-email@example.com";
+const BUSINESS_EMAIL = "projects@maisahbateman.com";
 
 const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav-links");
@@ -17,7 +17,8 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   });
 });
 
-document.querySelector("#contact-form").addEventListener("submit", event => {
+const contactForm = document.querySelector("#contact-form");
+if (contactForm) contactForm.addEventListener("submit", event => {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
   const name = form.get("name");
