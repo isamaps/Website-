@@ -11,3 +11,18 @@
 .about-grid li strong{color:#171719;font-weight:600}
 .about-details .edit-note{margin-top:28px}
 @media(max-width:700px){.about-grid{grid-template-columns:1fr;gap:36px}}
+.hero-bg{position:absolute;left:0;right:0;top:40px;height:470px;opacity:.15;pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(to bottom,#000 65%,transparent 100%);mask-image:linear-gradient(to bottom,#000 65%,transparent 100%)}
+.hero-bg svg{display:block;width:100%;height:100%}
+.hero-art{margin-top:40px}
+.bio-links{display:flex;flex-wrap:wrap;gap:6px 28px;margin:6px 0 14px}
+.bio-links .text-link{margin:0}
+.proposal-intro{font-size:16px;line-height:1.7;color:#57524e;max-width:420px;margin:26px 0 0}
+.contact select{width:100%;border:0;border-bottom:1px solid #bdb2a8;background:transparent;padding:13px 0;font:15px "DM Sans",sans-serif;outline:none;color:#171719;border-radius:0}
+.contact select:focus{border-color:#a76538}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.proposal-page{min-height:70vh}
+.contact form button:disabled{opacity:.6;cursor:default}
+@media(max-width:700px){.hero-bg{top:30px;height:380px}}
+.coming-soon{margin-top:50px;padding:70px 0 40px;border-top:1px solid #4a4540;text-align:center}
+.coming-soon-title{font:400 clamp(44px,8vw,96px)/1 "Oswald","DM Sans",sans-serif;color:#f3bfc4;margin:0 0 18px}
+.coming-soon p:last-child{font-size:16px;color:#c9c2bb;margin:0}
